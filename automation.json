@@ -5,7 +5,7 @@
   "niche": "material property lookup",
   "target": "webbook.nist.gov",
   "publicTarget": true,
-  "task": "Go to https://webbook.nist.gov/chemistry/ and look up the substance ethanol by its CAS registry number, 64-17-5. Open the matching substance record and read the general information NIST lists for it. Then report exactly four values, using NIST's own labels: the substance Name, the Formula, the Molecular weight, and the CAS Registry Number printed on the record. Also state whether that CAS registry number matches the 64-17-5 you searched for. Stop once you have reported those four values and the match verdict.",
+  "task": "Go to https://webbook.nist.gov/chemistry/ and look up the substance ethanol by its CAS registry number, 64-17-5. Open the matching substance record and read the general information NIST lists for it. Then report exactly four values: the substance name exactly as the record titles it, plus the Formula, the Molecular weight and the CAS Registry Number, each copied from the row NIST labels with that name. Also state whether that CAS registry number matches the 64-17-5 you searched for. Stop once you have reported those four values and the match verdict.",
   "expectedSteps": 15,
   "maxSteps": 24,
   "capCents": 121,
@@ -16,65 +16,83 @@
     "desktop_enabled": true
   },
   "portal": {
+    "theme": {
+      "bar": [22, 46, 81],
+      "accent": [0, 94, 162]
+    },
     "site": "NIST Chemistry WebBook",
+    "sub": "NIST Standard Reference Database Number 69",
     "url": "https://webbook.nist.gov/chemistry/",
     "nav": [
       "Home",
       "Name",
       "Formula",
+      "IUPAC Identifier",
       "CAS Number",
       "Structure",
+      "Reaction",
       "Help"
     ],
-    "label": "CAS Registry Number",
-    "query": "64-17-5",
-    "hint": "Exact registry-number matches are listed first, then related species.",
-    "columns": [
-      "Species name",
-      "Formula",
-      "Mol. weight",
-      "CAS Reg. No."
-    ],
-    "total": "6",
-    "rows": [
-      [
-        "Ethanol",
-        "C2H6O",
-        "46.0684",
-        "64-17-5"
-      ],
-      [
-        "Ethanol, 2-amino-",
-        "C2H7NO",
-        "61.0831",
-        "141-43-5"
-      ],
-      [
-        "Ethanol, 2-chloro-",
-        "C2H5ClO",
-        "80.5135",
-        "107-07-3"
-      ],
-      [
-        "Ethanol, 2-methoxy-",
-        "C3H8O2",
-        "76.0944",
-        "109-86-4"
-      ],
-      [
-        "Ethanol, 2,2,2-trifluoro-",
-        "C2H3F3O",
-        "100.0398",
-        "75-89-8"
-      ],
-      [
-        "Ethanol, 2-phenoxy-",
-        "C8H10O2",
-        "138.1638",
-        "122-99-6"
-      ]
-    ],
-    "answerRow": 0,
-    "answer": "Name Ethanol, Formula C2H6O, Molecular weight 46.0684, CAS Registry Number 64-17-5 - matches the search"
+    "answer": "Name Ethanol; Formula C2H6O; Molecular weight 46.0684; CAS Registry Number 64-17-5 - matches the search",
+    "scenes": [
+      {
+        "kind": "load",
+        "url": "https://webbook.nist.gov/chemistry/",
+        "text": "Loading NIST Chemistry WebBook...",
+        "status": "Opening the NIST Chemistry WebBook at webbook.nist.gov/chemistry/",
+        "steps": 1
+      },
+      {
+        "kind": "fields",
+        "url": "https://webbook.nist.gov/chemistry/",
+        "title": "Search Options",
+        "cols": 2,
+        "fields": [
+          ["Formula", "e.g. C2H6O"],
+          ["Name", "e.g. ethanol"],
+          ["IUPAC Identifier", "InChI or InChIKey"],
+          ["CAS Registry Number", "e.g. 64-17-5"],
+          ["Reaction", "By reactant or product"],
+          ["Author", "By NIST citation"],
+          ["Structure", "Draw or upload a file"],
+          ["Molecular Weight", "Range in g/mol"],
+          ["Ion Energetics", "Ionization energy"],
+          ["Vibrational Energies", "Electronic levels"],
+          ["Data Sources", "By NIST data source"],
+          ["Units", "SI or calorimetric"]
+        ],
+        "status": "Choosing the CAS Registry Number search from the WebBook options",
+        "steps": 4
+      },
+      {
+        "kind": "search",
+        "url": "https://webbook.nist.gov/chemistry/cas-ser/",
+        "label": "Please enter a CAS registry number:",
+        "query": "64-17-5",
+        "hint": "Registry numbers use the form nnnnnn-nn-n. Units for thermodynamic data: SI.",
+        "button": "Search",
+        "status": "Entering CAS registry number 64-17-5 into the WebBook CAS search",
+        "steps": 3
+      },
+      {
+        "kind": "datasheet",
+        "url": "https://webbook.nist.gov/cgi/cbook.cgi?ID=C64175&Units=SI",
+        "title": "Ethanol",
+        "subtitle": "Species record C64175 - General information - Units: SI",
+        "rows": [
+          ["Formula", "C2H6O", ""],
+          ["Molecular weight", "46.0684", "g/mol"],
+          ["IUPAC Standard InChI", "InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3", ""],
+          ["IUPAC Standard InChIKey", "LFQSCWFLJHTTHZ-UHFFFAOYSA-N", ""],
+          ["CAS Registry Number", "64-17-5", ""],
+          ["Other names", "Ethyl alcohol; Alcohol; Anhydrol", ""],
+          ["Permanent link", "/cgi/cbook.cgi?ID=C64175", ""]
+        ],
+        "answerRow": 4,
+        "note": "NIST Chemistry WebBook, SRD 69 - National Institute of Standards and Technology",
+        "status": "Reading the general information block on the ethanol record",
+        "steps": 4
+      }
+    ]
   }
 }

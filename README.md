@@ -34,11 +34,11 @@ Every material spec, safety data sheet, bill of materials line and supplier qual
 "Go to https://webbook.nist.gov/chemistry/ and look up the substance
  ethanol by its CAS registry number, 64-17-5. Open the matching substance
  record and read the general information NIST lists for it. Then report
- exactly four values, using NIST's own labels: the substance Name, the
- Formula, the Molecular weight, and the CAS Registry Number printed on the
- record. Also state whether that CAS registry number matches the 64-17-5
- you searched for. Stop once you have reported those four values and the
- match verdict."
+ exactly four values: the substance name exactly as the record titles it,
+ plus the Formula, the Molecular weight and the CAS Registry Number, each
+ copied from the row NIST labels with that name. Also state whether that
+ CAS registry number matches the 64-17-5 you searched for. Stop once you
+ have reported those four values and the match verdict."
 ```
 
 That prompt *is* the automation. When the site redesigns, the prompt still works. Point it at a different substance — or a different CAS number — by editing one string.
