@@ -5,7 +5,7 @@
   "niche": "material property lookup",
   "target": "webbook.nist.gov",
   "publicTarget": true,
-  "task": "Go to https://webbook.nist.gov/chemistry/ and look up the substance ethanol by its CAS registry number, 64-17-5. Open the matching substance record and read the general information NIST lists for it. Then report exactly four values: the IUPAC name, the molecular formula, the molecular weight in g/mol, and the CAS registry number printed on the record. Also state whether that CAS registry number matches the 64-17-5 you searched for. Stop once you have reported those four values and the match verdict.",
+  "task": "Go to https://webbook.nist.gov/chemistry/ and look up the substance ethanol by its CAS registry number, 64-17-5. Open the matching substance record and read the general information NIST lists for it. Then report exactly four values, using NIST's own labels: the substance Name, the Formula, the Molecular weight, and the CAS Registry Number printed on the record. Also state whether that CAS registry number matches the 64-17-5 you searched for. Stop once you have reported those four values and the match verdict.",
   "expectedSteps": 15,
   "maxSteps": 24,
   "capCents": 121,
@@ -14,5 +14,67 @@
   "machine": {
     "os_type": "linux",
     "desktop_enabled": true
+  },
+  "portal": {
+    "site": "NIST Chemistry WebBook",
+    "url": "https://webbook.nist.gov/chemistry/",
+    "nav": [
+      "Home",
+      "Name",
+      "Formula",
+      "CAS Number",
+      "Structure",
+      "Help"
+    ],
+    "label": "CAS Registry Number",
+    "query": "64-17-5",
+    "hint": "Exact registry-number matches are listed first, then related species.",
+    "columns": [
+      "Species name",
+      "Formula",
+      "Mol. weight",
+      "CAS Reg. No."
+    ],
+    "total": "6",
+    "rows": [
+      [
+        "Ethanol",
+        "C2H6O",
+        "46.0684",
+        "64-17-5"
+      ],
+      [
+        "Ethanol, 2-amino-",
+        "C2H7NO",
+        "61.0831",
+        "141-43-5"
+      ],
+      [
+        "Ethanol, 2-chloro-",
+        "C2H5ClO",
+        "80.5135",
+        "107-07-3"
+      ],
+      [
+        "Ethanol, 2-methoxy-",
+        "C3H8O2",
+        "76.0944",
+        "109-86-4"
+      ],
+      [
+        "Ethanol, 2,2,2-trifluoro-",
+        "C2H3F3O",
+        "100.0398",
+        "75-89-8"
+      ],
+      [
+        "Ethanol, 2-phenoxy-",
+        "C8H10O2",
+        "138.1638",
+        "122-99-6"
+      ]
+    ],
+    "answerRow": 0,
+    "answer": "Name Ethanol, Formula C2H6O, Molecular weight 46.0684, CAS Registry Number 64-17-5 - matches the search"
   }
 }

@@ -10,30 +10,35 @@
 [![Runs offline](https://img.shields.io/badge/runs%20offline-%240.00-blue)](#try-it-in-30-seconds)
 [![License](https://img.shields.io/badge/license-MIT-black)](LICENSE)
 
-<img src="media/demo.gif" alt="The agent searching the NIST Chemistry WebBook and reading a substance record" width="820">
+<img src="media/demo.gif" alt="Demo clip rendered by the bundled offline mock through the frame-capture pipeline" width="820">
 
-<sub>Every frame above is a **real screenshot the model actually saw** — pulled from the run's own model-input frames, not a reconstruction.</sub>
+<sub>The clip above is rendered by the **bundled offline mock**, so a fresh clone has a hero with no key and no spend. Run `npm run demo` against live Coasty and the same pipeline rebuilds it from the run's own model-input frames — the exact images the model saw.</sub>
 
 </div>
 
 ---
 
+- **Zero dependencies.** No `npm install`, no lockfile, no supply chain — pure Node built-ins.
+- **Runs offline for $0.** No API key, no account. A bundled in-process mock runs the full agent loop on a fresh clone.
+- **The demo video renders itself.** The frames come straight out of the run — against live Coasty they are the model's own input frames, so there is no storyboard that can drift.
+
 ## What this is
 
-A complete, production-grade [Coasty](https://coasty.ai) computer-use automation for **material and chemical property lookup**. It gives an AI agent one goal in plain English, and the agent drives a real browser on a real cloud desktop to accomplish it — no selectors, no scraping rules, no DOM parsing to maintain.
+A complete, runnable [Coasty](https://coasty.ai) computer-use automation for **material and chemical property lookup**. It gives an AI agent one goal in plain English, and the agent drives a real browser on a real cloud desktop to accomplish it — no selectors, no scraping rules, no DOM parsing to maintain.
 
 Every material spec, safety data sheet, bill of materials line and supplier qualification packet needs the same handful of facts about a substance — its formal name, its formula, its molecular weight, its CAS registry number — and they have to be right, because a transposed CAS number on a shipping document is a compliance problem, not a typo. So an engineer opens a reference database, types a name, reads four values off a record, and pastes them into a form. That loop is worth automating and it is exactly the loop that defeats a scraper: reference sites are human-facing interfaces built for reading, not feeds built for machines, and a scraper against one is a pile of selectors that breaks the first time the page is restyled. An agent is given the *goal* instead, so it reads the page the way the engineer does and keeps working when the layout moves.
 
 **Zero dependencies. Runs offline for $0 on a fresh clone. ~$0.75 to run for real.**
 
 ```
-"Go to https://webbook.nist.gov/chemistry/ and look up the substance ethanol by
- its CAS registry number, 64-17-5. Open the matching substance record and read
- the general information NIST lists for it. Then report exactly four values: the
- IUPAC name, the molecular formula, the molecular weight in g/mol, and the CAS
- registry number printed on the record. Also state whether that CAS registry
- number matches the 64-17-5 you searched for. Stop once you have reported those
- four values and the match verdict."
+"Go to https://webbook.nist.gov/chemistry/ and look up the substance
+ ethanol by its CAS registry number, 64-17-5. Open the matching substance
+ record and read the general information NIST lists for it. Then report
+ exactly four values, using NIST's own labels: the substance Name, the
+ Formula, the Molecular weight, and the CAS Registry Number printed on the
+ record. Also state whether that CAS registry number matches the 64-17-5
+ you searched for. Stop once you have reported those four values and the
+ match verdict."
 ```
 
 That prompt *is* the automation. When the site redesigns, the prompt still works. Point it at a different substance — or a different CAS number — by editing one string.
@@ -122,7 +127,7 @@ src/capture.mjs      model-input frames → mp4/gif/poster, with sanity checks
 src/cli.mjs          run · demo · estimate
 tools/mock.mjs       the bundled offline Coasty (real 1280×720 PNG frames)
 tools/doctor.mjs     preflight
-test/                25 tests, zero dependencies, fully offline
+test/                36 tests, zero dependencies, fully offline
 ```
 
 Adding a new automation is one `automation.json` and one prompt — `src/` never forks. See [AGENTS.md](AGENTS.md) for the authoring contract used by Claude Code and Codex.
@@ -135,7 +140,7 @@ npm test     # node --test, no install, no network, no key
 
 ## Related
 
-Part of the **Coasty automation catalog** — production-grade computer-use automations across 12 industries. See [the index](https://github.com/coasty-ai) for finance, healthcare, legal, logistics, energy, public sector, HR, education, retail, nonprofit and e-commerce.
+Part of the **Coasty automation catalog** — computer-use automations across 12 industries. See [the index](https://github.com/coasty-ai) for finance, healthcare, legal, logistics, energy, public sector, HR, education, retail, nonprofit and e-commerce.
 
 - [Coasty docs](https://coasty.ai/docs) · [API reference](https://coasty.ai/docs/llms.txt)
 - [computer-use-cookbook](https://github.com/coasty-ai/computer-use-cookbook) — the API, by endpoint, in 4 languages
