@@ -1,0 +1,24 @@
+{
+  "kind": "real-capture",
+  "note": "Every frame is a screenshot taken by a real browser driving real software during a real agent run.",
+  "software": "MATSPEC Material Property Database",
+  "task": "Sign on to this MATSPEC material terminal as user ENGR07, then from the function menu open the MATERIAL SPEC INQUIRY function. Run an inquiry for material class 10 - ORGANIC SOLVENTS with the Hazard Class Filter set to FLAMMABLE ONLY, leaving the other criteria at their defaults. Write down how many records the inquiry selects before you go any further - you must report that number even after you have moved on to another screen. Then, from the result list, work out which material has the HIGHEST BOILING POINT and pull up the Property Detail screen for that material's MATL ID. Report all of the following: the number of records the inquiry selected, and for the winning material its MATL ID, DESIGNATION, CHEMICAL FORMULA, MOLECULAR WEIGHT, BOILING POINT, CAS REGISTRY NO, STORAGE CLASS, APPROVED SUPPLIER CODE and SPEC REVISION DATE. Quote every value exactly as the screens display it.",
+  "model": "gpt-5.2",
+  "captured_at": "2026-08-02T00:57:46.155Z",
+  "status": "succeeded",
+  "answer": "Records selected: \"10\".\n\nWinning material (highest boiling point) Property Detail:\n- MATL ID: \"SOL-1008\"\n- DESIGNATION: \"O-XYLENE\"\n- CHEMICAL FORMULA: \"C8H10\"\n- MOLECULAR WEIGHT: \"106.17\"\n- BOILING POINT: \"144.50\"\n- CAS REGISTRY NO: \"95-47-6\"\n- STORAGE CLASS: \"SC-3B VENTED FLAM CAB\"\n- APPROVED SUPPLIER CODE: \"CHM-EU-2214\"\n- SPEC REVISION DATE: \"2026-03-19\"",
+  "steps_taken": 5,
+  "frames_rendered": 5,
+  "frames_captured": 5,
+  "duplicate_frames_dropped": 0,
+  "model_calls": 5,
+  "approx_usd": 0.0191,
+  "video_seconds": 15.2,
+  "frame_sha256": [
+    "c72d0db212df846058b1ed807780348ec232c8a9b5885c3e64dde755d113402f",
+    "311d5b31d2bb09f257f8d7786a2168edaadd328f796ab6f7dfe88439dde7498f",
+    "30496999fb1031aadff7d9583d1fe794c308135ece47887c2dd99e74f8e559af",
+    "6768a1bc736dd41c3d1c21c70e9180af0c1993193ececfbb08dba3fd644be1c3",
+    "fe87b1f52665d36b20894102828670d4d163583e06ab8b5c754cc36edb42d10a"
+  ]
+}
