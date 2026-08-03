@@ -3,9 +3,9 @@
   "title": "Manufacturing — material property lookup",
   "vertical": "Manufacturing",
   "niche": "material property lookup",
-  "target": "webbook.nist.gov",
-  "publicTarget": true,
-  "task": "Go to https://webbook.nist.gov/chemistry/ and look up the substance ethanol by its CAS registry number, 64-17-5. Open the matching substance record and read the general information NIST lists for it. Then report exactly four values: the substance name exactly as the record titles it, plus the Formula, the Molecular weight and the CAS Registry Number, each copied from the row NIST labels with that name. Also state whether that CAS registry number matches the 64-17-5 you searched for. Stop once you have reported those four values and the match verdict.",
+  "target": "MATSPEC",
+  "publicTarget": false,
+  "task": "Sign on to this MATSPEC material terminal as user ENGR07, then from the function menu open the MATERIAL SPEC INQUIRY function. Run an inquiry for material class 10 - ORGANIC SOLVENTS with the Hazard Class Filter set to FLAMMABLE ONLY, leaving the other criteria at their defaults. Write down how many records the inquiry selects before you go any further - you must report that number even after you have moved on to another screen. Then, from the result list, work out which material has the HIGHEST BOILING POINT and pull up the Property Detail screen for that material's MATL ID. Report all of the following: the number of records the inquiry selected, and for the winning material its MATL ID, DESIGNATION, CHEMICAL FORMULA, MOLECULAR WEIGHT, BOILING POINT, CAS REGISTRY NO, STORAGE CLASS, APPROVED SUPPLIER CODE and SPEC REVISION DATE. Quote every value exactly as the screens display it.",
   "expectedSteps": 15,
   "maxSteps": 24,
   "capCents": 121,
@@ -17,8 +17,16 @@
   },
   "portal": {
     "theme": {
-      "bar": [22, 46, 81],
-      "accent": [0, 94, 162]
+      "bar": [
+        22,
+        46,
+        81
+      ],
+      "accent": [
+        0,
+        94,
+        162
+      ]
     },
     "site": "NIST Chemistry WebBook",
     "sub": "NIST Standard Reference Database Number 69",
@@ -48,18 +56,54 @@
         "title": "Search Options",
         "cols": 2,
         "fields": [
-          ["Formula", "e.g. C2H6O"],
-          ["Name", "e.g. ethanol"],
-          ["IUPAC Identifier", "InChI or InChIKey"],
-          ["CAS Registry Number", "e.g. 64-17-5"],
-          ["Reaction", "By reactant or product"],
-          ["Author", "By NIST citation"],
-          ["Structure", "Draw or upload a file"],
-          ["Molecular Weight", "Range in g/mol"],
-          ["Ion Energetics", "Ionization energy"],
-          ["Vibrational Energies", "Electronic levels"],
-          ["Data Sources", "By NIST data source"],
-          ["Units", "SI or calorimetric"]
+          [
+            "Formula",
+            "e.g. C2H6O"
+          ],
+          [
+            "Name",
+            "e.g. ethanol"
+          ],
+          [
+            "IUPAC Identifier",
+            "InChI or InChIKey"
+          ],
+          [
+            "CAS Registry Number",
+            "e.g. 64-17-5"
+          ],
+          [
+            "Reaction",
+            "By reactant or product"
+          ],
+          [
+            "Author",
+            "By NIST citation"
+          ],
+          [
+            "Structure",
+            "Draw or upload a file"
+          ],
+          [
+            "Molecular Weight",
+            "Range in g/mol"
+          ],
+          [
+            "Ion Energetics",
+            "Ionization energy"
+          ],
+          [
+            "Vibrational Energies",
+            "Electronic levels"
+          ],
+          [
+            "Data Sources",
+            "By NIST data source"
+          ],
+          [
+            "Units",
+            "SI or calorimetric"
+          ]
         ],
         "status": "Choosing the CAS Registry Number search from the WebBook options",
         "steps": 4
@@ -80,13 +124,41 @@
         "title": "Ethanol",
         "subtitle": "Species record C64175 - General information - Units: SI",
         "rows": [
-          ["Formula", "C2H6O", ""],
-          ["Molecular weight", "46.0684", "g/mol"],
-          ["IUPAC Standard InChI", "InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3", ""],
-          ["IUPAC Standard InChIKey", "LFQSCWFLJHTTHZ-UHFFFAOYSA-N", ""],
-          ["CAS Registry Number", "64-17-5", ""],
-          ["Other names", "Ethyl alcohol; Alcohol; Anhydrol", ""],
-          ["Permanent link", "/cgi/cbook.cgi?ID=C64175", ""]
+          [
+            "Formula",
+            "C2H6O",
+            ""
+          ],
+          [
+            "Molecular weight",
+            "46.0684",
+            "g/mol"
+          ],
+          [
+            "IUPAC Standard InChI",
+            "InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3",
+            ""
+          ],
+          [
+            "IUPAC Standard InChIKey",
+            "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+            ""
+          ],
+          [
+            "CAS Registry Number",
+            "64-17-5",
+            ""
+          ],
+          [
+            "Other names",
+            "Ethyl alcohol; Alcohol; Anhydrol",
+            ""
+          ],
+          [
+            "Permanent link",
+            "/cgi/cbook.cgi?ID=C64175",
+            ""
+          ]
         ],
         "answerRow": 4,
         "note": "NIST Chemistry WebBook, SRD 69 - National Institute of Standards and Technology",
@@ -94,5 +166,6 @@
         "steps": 4
       }
     ]
-  }
+  },
+  "software": "MATSPEC Material Property Database"
 }
